@@ -35,7 +35,7 @@ def main():
 	p = api.gen_params(input('Enter your mobile number: '))
 	con = api.get_con_details(p)
 	if con['success'] == False:
-		register()
+		register(p)
 		con = api.get_con_details(p)
 	print_balance(con)
 	data = api.get_data_usage(p)
@@ -43,4 +43,5 @@ def main():
 		quit()
 	print_data_usage(data)
 
-main()
+if __name__ == '__main__':
+    main()
